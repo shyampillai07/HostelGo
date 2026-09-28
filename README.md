@@ -27,21 +27,7 @@ Registration · Payment Verification · Room Allocation · Digital Pass · QR Ac
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 ![PWA](https://img.shields.io/badge/PWA-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white)
 
-</p>
-
-<p align="center">
-
-<a href="https://HostelGo.vercel.app">
-<img src="https://img.shields.io/badge/LIVE%20APPLICATION-HostelGo-1B2A4A?style=for-the-badge" alt="Live Application">
-</a>
-
-<a href="https://HostelGo.onrender.com/api/health">
-<img src="https://img.shields.io/badge/API-Health%20Check-47A248?style=for-the-badge" alt="API Health">
-</a>
-
-</p>
 </div>
-
 
 
 ## Overview
@@ -643,27 +629,6 @@ Framework: Vite
 Database: MongoDB Atlas
 ODM: Mongoose
 ```
-
-
-
-## Live Application
-
-<p align="center">
-
-<a href="https://HostelGo.vercel.app">
-<img src="https://img.shields.io/badge/OPEN%20HOSTELGO-LIVE%20APPLICATION-1B2A4A?style=for-the-badge" alt="Open HostelGo">
-</a>
-
-</p>
-
-**Application**
-
-https://HostelGo.vercel.app
-
-**API Health**
-
-https://HostelGo.onrender.com/api/health
-
 
 
 ## Known Limitations
