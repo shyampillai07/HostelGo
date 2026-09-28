@@ -10,10 +10,7 @@ Registration · Payment Verification · Room Allocation · Digital Pass · QR Ac
 
 <p align="center">
 
-![GitHub Stars](https://img.shields.io/github/stars/shyampillai07/HostelGo?style=for-the-badge&logo=github&label=Stars)
-![GitHub Forks](https://img.shields.io/github/forks/shyampillai07/HostelGo?style=for-the-badge&logo=github&label=Forks)
-![GitHub License](https://img.shields.io/github/license/shyampillai07/HostelGo?style=for-the-badge)
-![GitHub Last Commit](https://img.shields.io/github/last-commit/shyampillai07/HostelGo?style=for-the-badge&logo=github)
+
 
 </p>
 
