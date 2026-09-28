@@ -9,8 +9,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       devOptions: { enabled: true }, 
       manifest: {
-        name: 'CampusPass-360',
-        short_name: 'CampusPass360',
+        name: 'HostelGo',
+        short_name: 'HostelGo',
         description: 'Digital hostel pass and access management — VTU PG Centre, Mysuru',
         theme_color: '#1B2A4A',
         background_color: '#F7F2E7',

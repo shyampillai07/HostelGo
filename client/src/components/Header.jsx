@@ -40,8 +40,8 @@ export default function Header() {
   return (
     <header className="cp-header">
       <div className="cp-header-identity">
-        <Link to={homeTo} className="cp-header-brand" aria-label="CampusPass360 home">
-          <img src="/campuspass360-logo.png" alt="CampusPass360" className="cp-header-logo" />
+        <Link to={homeTo} className="cp-header-brand" aria-label="HostelGo home">
+          <img src="/HostelGo-logo.png" alt="HostelGo" className="cp-header-logo" />
           <span className="cp-header-tagline">Digital Hostel<br />Management</span>
         </Link>
 

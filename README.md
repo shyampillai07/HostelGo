@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="client/public/icon-512.png" width="120" alt="CampusPass360 Logo">
+<img src="client/public/icon-512.png" width="120" alt="HostelGo Logo">
 
-# CampusPass360 
+# HostelGo 
 ### Digital Hostel Management System
 
 
@@ -10,10 +10,10 @@ Registration · Payment Verification · Room Allocation · Digital Pass · QR Ac
 
 <p align="center">
 
-![GitHub Stars](https://img.shields.io/github/stars/shyampillai07/CampusPass360?style=for-the-badge&logo=github&label=Stars)
-![GitHub Forks](https://img.shields.io/github/forks/shyampillai07/CampusPass360?style=for-the-badge&logo=github&label=Forks)
-![GitHub License](https://img.shields.io/github/license/shyampillai07/CampusPass360?style=for-the-badge)
-![GitHub Last Commit](https://img.shields.io/github/last-commit/shyampillai07/CampusPass360?style=for-the-badge&logo=github)
+![GitHub Stars](https://img.shields.io/github/stars/shyampillai07/HostelGo?style=for-the-badge&logo=github&label=Stars)
+![GitHub Forks](https://img.shields.io/github/forks/shyampillai07/HostelGo?style=for-the-badge&logo=github&label=Forks)
+![GitHub License](https://img.shields.io/github/license/shyampillai07/HostelGo?style=for-the-badge)
+![GitHub Last Commit](https://img.shields.io/github/last-commit/shyampillai07/HostelGo?style=for-the-badge&logo=github)
 
 </p>
 
@@ -31,11 +31,11 @@ Registration · Payment Verification · Room Allocation · Digital Pass · QR Ac
 
 <p align="center">
 
-<a href="https://campuspass360.vercel.app">
-<img src="https://img.shields.io/badge/LIVE%20APPLICATION-CampusPass360-1B2A4A?style=for-the-badge" alt="Live Application">
+<a href="https://HostelGo.vercel.app">
+<img src="https://img.shields.io/badge/LIVE%20APPLICATION-HostelGo-1B2A4A?style=for-the-badge" alt="Live Application">
 </a>
 
-<a href="https://campuspass360.onrender.com/api/health">
+<a href="https://HostelGo.onrender.com/api/health">
 <img src="https://img.shields.io/badge/API-Health%20Check-47A248?style=for-the-badge" alt="API Health">
 </a>
 
@@ -46,18 +46,18 @@ Registration · Payment Verification · Room Allocation · Digital Pass · QR Ac
 
 ## Overview
 
-CampusPass360 is a full-stack digital hostel management system designed for VTU PG Centre, Mysuru.
+HostelGo is a full-stack digital hostel management system designed for VTU PG Centre, Mysuru.
 
 The system brings student registration, hostel payment submission, payment verification, room and bed allocation, digital hostel passes, and gate access verification into a single application.
 
 Students can register, submit payment details, track their verification status, view their hostel allocation, and use a digital QR pass for hostel access. Wardens can manage payments, occupancy, rooms, beds, and maintenance requests, while gate staff can scan digital passes and verify access in real time.
 
 
-## Why CampusPass360?
+## Why HostelGo?
 
 Hostel management involves several connected processes such as registration, payment verification, room allocation, and access control.
 
-CampusPass360 connects these workflows through a single role-based system.
+HostelGo connects these workflows through a single role-based system.
 
 ```text
 Student Registration
@@ -80,31 +80,31 @@ QR-Based Gate Verification
 ### 1. Landing Page
 
 <p align="center">
-  <img src="docs/screenshots/landing-page.png" width="900" alt="CampusPass360 Landing Page">
+  <img src="docs/screenshots/landing-page.png" width="900" alt="HostelGo Landing Page">
 </p>
 
 ### 2. Student Page
 
 <p align="center">
-  <img src="docs/screenshots/student-page.png" width="900" alt="CampusPass360 Student Page">
+  <img src="docs/screenshots/student-page.png" width="900" alt="HostelGo Student Page">
 </p>
 
 ### 3. Warden Page
 
 <p align="center">
-  <img src="docs/screenshots/warden-page.png" width="900" alt="CampusPass360 Warden Page">
+  <img src="docs/screenshots/warden-page.png" width="900" alt="HostelGo Warden Page">
 </p>
 
 ### 4. Login
 
 <p align="center">
-  <img src="docs/screenshots/login.png" width="850" alt="CampusPass360 Login Page">
+  <img src="docs/screenshots/login.png" width="850" alt="HostelGo Login Page">
 </p>
 
 ### 5. Registration
 
 <p align="center">
-  <img src="docs/screenshots/registration.png" width="850" alt="CampusPass360 Registration Page">
+  <img src="docs/screenshots/registration.png" width="850" alt="HostelGo Registration Page">
 </p>
 
 
@@ -399,7 +399,7 @@ flowchart TB
 
 ## Security
 
-CampusPass360 applies authentication and authorization at the application and API levels.
+HostelGo applies authentication and authorization at the application and API levels.
 
 | Feature | Description |
 |----------|-------------|
@@ -420,7 +420,7 @@ CampusPass360 applies authentication and authorization at the application and AP
 ## Project Structure
 
 ```text
-CampusPass360/
+HostelGo/
 │
 ├── client/                              # React + Vite frontend
 │   ├── public/                          # Static assets and PWA resources
@@ -472,8 +472,8 @@ CampusPass360/
 ### Clone Repository
 
 ```bash
-git clone https://github.com/shyampillai07/CampusPass360.git
-cd CampusPass360
+git clone https://github.com/shyampillai07/HostelGo.git
+cd HostelGo
 ```
 
 ### Install Backend
@@ -611,7 +611,7 @@ node scripts/seedRooms.js
 Production:
 
 ```text
-https://campuspass360.onrender.com/api/health
+https://HostelGo.onrender.com/api/health
 ```
 
 Other application routes are organized under the backend `routes/` and `controllers/` directories.
@@ -650,19 +650,19 @@ ODM: Mongoose
 
 <p align="center">
 
-<a href="https://campuspass360.vercel.app">
-<img src="https://img.shields.io/badge/OPEN%20CAMPUSPASS360-LIVE%20APPLICATION-1B2A4A?style=for-the-badge" alt="Open CampusPass360">
+<a href="https://HostelGo.vercel.app">
+<img src="https://img.shields.io/badge/OPEN%20HOSTELGO-LIVE%20APPLICATION-1B2A4A?style=for-the-badge" alt="Open HostelGo">
 </a>
 
 </p>
 
 **Application**
 
-https://campuspass360.vercel.app
+https://HostelGo.vercel.app
 
 **API Health**
 
-https://campuspass360.onrender.com/api/health
+https://HostelGo.onrender.com/api/health
 
 
 

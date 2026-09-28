@@ -46,7 +46,7 @@ export default function Footer() {
       </div>
 
       <div className="cp-footer-bottom">
-        © {new Date().getFullYear()} CampusPass360
+        © {new Date().getFullYear()} HostelGo. All rights reserved. Developed by <a href="https://www.example.com" target="_blank" rel="noreferrer">Example Inc.</a>
       </div>
 
     </footer>

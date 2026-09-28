@@ -88,7 +88,7 @@ async function start() {
   await connectDB();
 
   app.listen(PORT, () => {
-    console.log(`[server] CampusPass-360 API listening on port ${PORT}`);
+    console.log(`[server] HostelGo API listening on port ${PORT}`);
   });
 }
 

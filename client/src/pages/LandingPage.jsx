@@ -31,7 +31,7 @@ export default function LandingPage() {
           </div>
           <div className="landing-hero-content">
             <p className="landing-eyebrow">VTU PG CENTRE • MYSURU</p>
-            <h1>CampusPass360</h1>
+            <h1>HostelGo</h1>
             <h2>Digital Hostel Management System</h2>
             <p className="landing-description">
               A unified digital platform for hostel admissions, room allotment, fee payments, and secure campus access.
@@ -44,7 +44,7 @@ export default function LandingPage() {
         <div className="hero-services-divider" aria-hidden="true" />
         <section className="services-section" id="services">
           <div className="section-heading">
-            <p className="landing-eyebrow">CAMPUSPASS360</p>
+            <p className="landing-eyebrow">HOSTELGO</p>
             <h2>Hostel Services</h2>
           </div>
           <div className="services-grid">
@@ -57,7 +57,7 @@ export default function LandingPage() {
         <section className="landing-intro" id="about">
           <p className="landing-eyebrow">VTU PG CENTRE • MYSURU</p>
           <h2>Digital management for hostel<br />services.</h2>
-          <p>CampusPass360 brings essential hostel services together in one accessible platform for students and hostel administrators.</p>
+          <p>HostelGo brings essential hostel services together in one accessible platform for students and hostel administrators.</p>
         </section>
       </div>
       <Footer />
