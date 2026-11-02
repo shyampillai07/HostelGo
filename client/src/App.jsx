@@ -3,7 +3,6 @@ import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import NotFoundPage from './pages/NotFoundPage';
-import PlaceholderPage from './pages/PlaceholderPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import StudentDashboard from './pages/StudentDashboard';
 import WardenDashboard from './pages/WardenDashboard';

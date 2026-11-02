@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import api from '../api/axios';
 
+/* eslint-disable react-refresh/only-export-components */
 const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
@@ -52,3 +53,4 @@ export function useAuth() {
   if (!ctx) throw new Error('useAuth must be used inside <AuthProvider>');
   return ctx;
 }
+/* eslint-enable react-refresh/only-export-components */

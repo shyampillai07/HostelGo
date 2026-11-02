@@ -1,27 +1,60 @@
 .cp-scanner {
-    max-width: 480px;
+    max-width: 520px;
     margin: 0 auto;
-    padding: 40px 24px;
+    padding: 32px 16px 56px;
     text-align: center;
 }
 
-.cp-scanner-title {
-    font-family: var(--font-display);
-    color: var(--palace-navy);
+.cp-page-header--compact {
+    margin-bottom: 10px;
+}
+
+.cp-scanner-shell {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(27, 42, 74, 0.04);
+    border: 1px solid rgba(27, 42, 74, 0.08);
+    box-shadow: 0 18px 30px rgba(18, 37, 66, 0.04);
 }
 
 .cp-scanner-view {
-    margin: 20px auto;
-    border-radius: 12px;
+    width: 100%;
+    max-width: 420px;
+    min-height: 320px;
+    margin: 0 auto;
+    border-radius: 20px;
     overflow: hidden;
+}
+
+.cp-scanner-indicator {
+    padding: 10px 14px 18px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
 }
 
 .cp-scanner-error {
     background: rgba(198, 40, 40, 0.1);
     color: var(--denied-red);
     padding: 16px;
-    border-radius: 8px;
-    margin-top: 20px;
+    border-radius: 12px;
+    margin-top: 16px;
+    font-weight: 600;
+}
+
+.cp-scanner-error button {
+    margin-top: 12px;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    background: var(--palace-navy);
+    color: var(--ivory);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
 }
 
 .cp-scanner-manual {
@@ -32,26 +65,28 @@
 
 .cp-scanner-manual input {
     flex: 1;
-    padding: 8px 10px;
-    border: 1px solid rgba(27, 42, 74, 0.25);
-    border-radius: 6px;
-    font-size: 12px;
+    padding: 10px 12px;
+    border: 1px solid rgba(27, 42, 74, 0.2);
+    border-radius: 10px;
+    font-size: 14px;
 }
 
 .cp-scanner-manual button {
-    padding: 8px 16px;
+    padding: 10px 16px;
     background: var(--palace-navy);
     color: var(--ivory);
     border: none;
-    border-radius: 6px;
+    border-radius: 10px;
     cursor: pointer;
+    font-weight: 700;
 }
 
 .cp-scan-result {
     margin-top: 24px;
     padding: 24px;
-    border-radius: 12px;
+    border-radius: 16px;
     font-family: var(--font-body);
+    text-align: left;
 }
 
 .cp-scan-result--granted {
@@ -79,9 +114,20 @@
 }
 
 .cp-scan-photo {
-    width: 70px;
-    height: 70px;
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 8px;
+    border: 2px solid rgba(27, 42, 74, 0.15);
+}
+
+@media (max-width: 560px) {
+    .cp-scanner-manual {
+        flex-direction: column;
+    }
+
+    .cp-scanner-manual button {
+        width: 100%;
+    }
 }

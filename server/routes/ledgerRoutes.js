@@ -1,5 +1,5 @@
 const express = require('express');
-const { submitLedger ,listLedgers, verifyLedger} = require('../controllers/ledgerController');
+const { submitLedger, listLedgers, getLedgerReceipt, verifyLedger } = require('../controllers/ledgerController');
 const { requireAuth } = require('../middleware/auth');
 const { requireRole } = require('../middleware/rbac');
 const { uploadReceiptPdf } = require('../middleware/upload');
@@ -21,6 +21,13 @@ router.get(
   requireAuth,
   requireRole('WARDEN', 'GATE_STAFF'),
   listLedgers
+);
+
+router.get(
+  '/:id/receipt',
+  requireAuth,
+  requireRole('WARDEN'),
+  getLedgerReceipt
 );
 
 router.put(

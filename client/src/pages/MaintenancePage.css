@@ -1,97 +1,247 @@
 .cp-maint {
-    max-width: 640px;
+    max-width: 960px;
     margin: 0 auto;
-    padding: 40px 24px;
+    padding: 40px 24px 56px;
 }
 
-.cp-maint-title {
-    font-family: var(--font-display);
-    color: var(--palace-navy);
-    margin-bottom: 20px;
+.cp-maint--warden {
+    max-width: 1100px;
+}
+
+.cp-page-header--compact {
+    margin-bottom: 18px;
+}
+
+.cp-kicker {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mysuru-gold);
 }
 
 .cp-maint-form {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 10px;
     background: #fffdf9;
     border: 1px solid rgba(184, 134, 11, 0.25);
-    border-radius: 12px;
+    border-radius: 16px;
     padding: 20px;
     margin-bottom: 24px;
+    box-shadow: 0 12px 30px rgba(18, 37, 66, 0.04);
 }
 
-.cp-maint-form label {
+.cp-maint-form label,
+.cp-maint-select-wrap span,
+.cp-maint-note-wrap span {
     font-family: var(--font-body);
     font-size: 13px;
     font-weight: 600;
     color: var(--palace-navy);
 }
 
-.cp-maint-form textarea {
+.cp-maint-form textarea,
+.cp-maint-note-wrap textarea,
+.cp-maint-select-wrap select,
+.cp-search-box input {
     font-family: var(--font-body);
     font-size: 14px;
     padding: 9px 11px;
-    border: 1px solid rgba(27, 42, 74, 0.25);
-    border-radius: 8px;
-    margin-top: 4px;
+    border: 1px solid rgba(27, 42, 74, 0.2);
+    border-radius: 10px;
     resize: vertical;
+    background: rgba(255,255,255,0.8);
 }
 
-.cp-maint-form button {
-    margin-top: 14px;
+.cp-maint-form textarea,
+.cp-maint-note-wrap textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cp-maint-form button,
+.cp-maint-save {
+    margin-top: 8px;
     background: var(--palace-navy);
     color: var(--ivory);
     border: none;
-    border-radius: 8px;
-    padding: 10px;
+    border-radius: 10px;
+    padding: 10px 16px;
     font-family: var(--font-body);
     font-weight: 700;
     cursor: pointer;
 }
 
+.cp-maint-form button:disabled,
+.cp-maint-save:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.cp-maint-error,
+.cp-maint-success,
+.cp-maint-state {
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
 .cp-maint-error {
-    background: rgba(198, 40, 40, 0.1);
+    background: rgba(198, 40, 40, 0.08);
     color: var(--denied-red);
-    padding: 8px 12px;
-    border-radius: 8px;
-    font-size: 13px;
+}
+
+.cp-maint-success {
+    background: rgba(46, 125, 50, 0.08);
+    color: var(--verified-green);
+}
+
+.cp-maint-state {
+    background: rgba(247, 242, 231, 0.9);
+    border: 1px solid rgba(27, 42, 74, 0.08);
+    color: var(--text-muted);
+}
+
+.cp-maint-state--empty {
+    text-align: center;
+}
+
+.cp-maint-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.cp-maint-filters,
+.cp-filter-btn,
+.cp-search-box {
+    display: flex;
+    align-items: center;
+}
+
+.cp-maint-filters {
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.cp-filter-btn {
+    background: rgba(255,255,255,0.8);
+    border: 1px solid rgba(27, 42, 74, 0.12);
+    border-radius: 999px;
+    min-height: 40px;
+    padding: 0 16px;
+    color: var(--palace-navy);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.cp-filter-btn.is-active {
+    background: var(--palace-navy);
+    border-color: var(--palace-navy);
+    color: #fff;
+}
+
+.cp-search-box {
+    gap: 10px;
+    background: rgba(255,255,255,0.8);
+    border: 1px solid rgba(27, 42, 74, 0.08);
+    border-radius: 999px;
+    min-height: 44px;
+    padding: 0 14px;
+}
+
+.cp-search-box span {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.cp-search-box input {
+    border: none;
+    background: transparent;
+    min-width: 220px;
+    outline: none;
+}
+
+.cp-maint-list {
+    display: grid;
+    gap: 18px;
 }
 
 .cp-maint-ticket {
     background: #fffdf9;
     border-left: 4px solid var(--pending-amber);
-    border-radius: 8px;
-    padding: 14px 18px;
-    margin-bottom: 10px;
+    border-radius: 16px;
+    padding: 18px 18px 16px;
     font-family: var(--font-body);
     font-size: 14px;
+    box-shadow: 0 14px 30px rgba(18, 37, 66, 0.04);
+}
+
+.cp-maint-ticket--warden {
+    border-left-color: var(--mysuru-gold);
 }
 
 .cp-maint-row {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 6px;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
 }
 
-.cp-maint-date {
+.cp-maint-row--stacked {
+    align-items: flex-start;
+}
+
+.cp-maint-row--meta {
     color: var(--text-muted);
     font-size: 12px;
 }
 
+.cp-maint-submeta,
+.cp-maint-contact {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.cp-maint-date,
 .cp-maint-note {
     color: var(--text-muted);
-    font-size: 13px;
+    font-size: 12px;
+}
+
+.cp-maint-description {
+    margin: 0 0 14px;
+    line-height: 1.6;
+    color: var(--palace-navy);
+}
+
+.cp-maint-note {
     font-style: italic;
-    margin-top: 6px;
+    margin-top: 8px;
 }
 
 .cp-maint-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 28px;
     font-size: 11px;
-    font-weight: 700;
-    padding: 3px 8px;
+    font-weight: 800;
+    padding: 4px 10px;
     border-radius: 999px;
     text-transform: uppercase;
+    letter-spacing: 0.03em;
 }
 
 .cp-maint-badge--open {
@@ -99,7 +249,7 @@
     color: var(--pending-amber);
 }
 
-.cp-maint-badge--in_progress {
+.cp-maint-badge--in-progress {
     background: rgba(27, 42, 74, 0.1);
     color: var(--palace-navy);
 }
@@ -112,4 +262,45 @@
 .cp-maint-badge--rejected {
     background: rgba(198, 40, 40, 0.15);
     color: var(--denied-red);
+}
+
+.cp-maint-controls {
+    display: grid;
+    gap: 14px;
+}
+
+.cp-maint-select-wrap,
+.cp-maint-note-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cp-maint-select-wrap select {
+    width: min(220px, 100%);
+}
+
+.cp-maint-save {
+    width: fit-content;
+}
+
+@media (max-width: 720px) {
+    .cp-maint {
+        padding: 28px 16px 48px;
+    }
+
+    .cp-maint-toolbar,
+    .cp-maint-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cp-search-box {
+        width: 100%;
+    }
+
+    .cp-search-box input {
+        width: 100%;
+        min-width: 0;
+    }
 }

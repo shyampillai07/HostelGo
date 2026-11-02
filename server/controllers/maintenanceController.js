@@ -27,7 +27,10 @@ async function listAllTickets(req, res) {
   const filter = typeof status === 'string' && ALLOWED_STATUSES.includes(status)
     ? { status }
     : {};
-  const tickets = await MaintenanceTicket.find(filter).sort({ createdAt: -1 }).lean();
+  const tickets = await MaintenanceTicket.find(filter)
+    .populate('studentId', 'name usn email phone branch category')
+    .sort({ createdAt: -1 })
+    .lean();
   return res.status(200).json({ tickets });
 }
 
