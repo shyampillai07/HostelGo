@@ -83,7 +83,12 @@ async function login(req, res) {
     return res.status(400).json({ errors });
   }
 
-  const { identifier, password } = req.body;
+  const { identifier, password, role } = req.body;
+  if (role !== undefined) {
+    if (!['STUDENT', 'WARDEN', 'GATE_STAFF', 'ADMIN'].includes(role)) {
+      return res.status(400).json({ error: 'Invalid account type' });
+    }
+  }
   const normalized = identifier.trim();
 
 
@@ -98,6 +103,10 @@ async function login(req, res) {
 
   if (!user) {
     return res.status(401).json({ error: 'Invalid credentials' });
+  }
+
+  if (role !== undefined && user.role !== role) {
+    return res.status(403).json({ error: `These credentials do not belong to the ${role.toLowerCase().replace('_', ' ')} account type` });
   }
 
   const passwordMatches = await bcrypt.compare(password, user.passwordHash);

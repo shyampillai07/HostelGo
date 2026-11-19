@@ -15,6 +15,24 @@ const passRoutes = require('./routes/passRoutes');
 const scannerRoutes = require('./routes/scannerRoutes');
 const maintenanceRoutes = require('./routes/maintenanceRoutes');
 const adminRoutes = require('./routes/adminRoutes');
+const configuredClientOrigins = (process.env.CLIENT_ORIGIN || '')
+  .split(',')
+  .map((origin) => origin.trim())
+  .filter(Boolean);
+
+function isLocalNetworkOrigin(origin) {
+  try {
+    const hostname = new URL(origin).hostname;
+    return hostname === 'localhost'
+      || hostname === '127.0.0.1'
+      || hostname === '::1'
+      || /^10\./.test(hostname)
+      || /^192\.168\./.test(hostname)
+      || /^172\.(1[6-9]|2\d|3[0-1])\./.test(hostname);
+  } catch {
+    return false;
+  }
+}
 
 
 // --- Middleware stack ---
@@ -23,7 +41,13 @@ app.use(helmet());
 
 app.use(
   cors({
-    origin: process.env.CLIENT_ORIGIN, 
+    origin(origin, callback) {
+      if (!origin || configuredClientOrigins.includes(origin)
+        || (process.env.NODE_ENV !== 'production' && isLocalNetworkOrigin(origin))) {
+        return callback(null, true);
+      }
+      return callback(new Error('Origin is not allowed by CORS'));
+    },
     credentials: true,
   })
 );

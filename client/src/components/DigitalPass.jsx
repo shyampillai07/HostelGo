@@ -30,7 +30,7 @@ export default function DigitalPass({ user }) {
         <div className="cp-pass-field"><span>Room</span>{pass ? pass.room : 'Not allocated yet'}</div>
       </div>
       <div className="cp-pass-qr">
-        {pass ? <QRCodeSVG value={pass.qrToken} size={96} /> : <span>{reason || 'Loading...'}</span>}
+        {pass ? <QRCodeSVG value={pass.qrToken} size={176} level="M" marginSize={2} /> : <span>{reason || 'Loading...'}</span>}
       </div>
     </div>
   );

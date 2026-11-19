@@ -1,60 +1,128 @@
 .cp-auth-wrap {
+    min-height: calc(100vh - 180px);
     display: flex;
+    align-items: center;
     justify-content: center;
-    padding: 60px 24px;
+    padding: 48px 20px 64px;
 }
 
 .cp-auth-card {
     width: 100%;
-    max-width: 420px;
-    background: #fffdf9;
-    border: 1px solid rgba(184, 134, 11, 0.25);
-    border-radius: var(--radius-card);
-    padding: 36px 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+    max-width: 520px;
+    background: rgba(255, 253, 249, 0.96);
+    border: 1px solid rgba(184, 134, 11, 0.22);
+    border-radius: 22px;
+    padding: 32px;
+    box-shadow: 0 24px 70px rgba(18, 37, 66, 0.12);
+}
+
+.cp-auth-heading {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.cp-auth-kicker {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: var(--mysuru-gold);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
 }
 
 .cp-auth-title {
     font-family: var(--font-display);
     color: var(--palace-navy);
-    font-size: 28px;
-    margin: 0 0 16px;
-    text-align: center;
+    font-size: clamp(30px, 5vw, 40px);
+    line-height: 1;
+    margin: 0;
+}
+
+.cp-auth-heading p {
+    margin: 10px 0 0;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.cp-role-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+    padding: 6px;
+    margin-bottom: 22px;
+    background: rgba(27, 42, 74, 0.06);
+    border-radius: 14px;
+}
+
+.cp-role-tab {
+    min-height: 42px;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--text-muted);
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.cp-role-tab.is-active {
+    background: var(--palace-navy);
+    color: #fff;
+    box-shadow: 0 8px 18px rgba(27, 42, 74, 0.16);
+}
+
+.cp-auth-form {
+    display: flex;
+    flex-direction: column;
 }
 
 .cp-auth-label {
     font-family: var(--font-body);
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--palace-navy);
-    margin-top: 12px;
+    margin: 12px 0 7px;
 }
 
 .cp-auth-input {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 48px;
     font-family: var(--font-body);
     font-size: 14px;
-    padding: 10px 12px;
-    border: 1px solid rgba(27, 42, 74, 0.25);
-    border-radius: var(--radius-input);
-    margin-top: 4px;
+    padding: 12px 14px;
+    border: 1px solid rgba(27, 42, 74, 0.18);
+    border-radius: 11px;
+    background: #fff;
+    color: var(--palace-navy);
+    outline: none;
+}
+
+.cp-auth-input:focus {
+    border-color: var(--mysuru-gold);
+    box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.12);
 }
 
 .cp-auth-submit {
+    min-height: 48px;
     margin-top: 22px;
-    background: var(--palace-navy);
+    background: #0969da;
     color: var(--ivory);
     border: none;
-    border-radius: var(--radius-input);
-    padding: 12px;
+    border-radius: 11px;
+    padding: 12px 16px;
     font-family: var(--font-body);
-    font-weight: 700;
+    font-weight: 800;
     cursor: pointer;
+    transition: background 0.18s ease, transform 0.18s ease;
 }
 
-.cp-auth-submit:hover {
-    background: var(--mysuru-gold);
+.cp-auth-submit:hover:not(:disabled) {
+    background: #0550ae;
+    transform: translateY(-1px);
 }
 
 .cp-auth-submit:disabled {
@@ -63,7 +131,7 @@
 }
 
 .cp-auth-switch {
-    margin-top: 16px;
+    margin: 16px 0 0;
     text-align: center;
     font-size: 13px;
     color: var(--text-muted);
@@ -71,15 +139,266 @@
 
 .cp-auth-switch a {
     color: var(--mysuru-gold);
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
 }
 
 .cp-auth-error {
-    background: rgba(198, 40, 40, 0.1);
+    background: rgba(198, 40, 40, 0.08);
     color: var(--denied-red);
+    border: 1px solid rgba(198, 40, 40, 0.14);
     padding: 10px 12px;
-    border-radius: var(--radius-input);
+    border-radius: 10px;
     font-size: 13px;
-    margin-bottom: 8px;
+    margin: 4px 0 2px;
+}
+
+@media (max-width: 560px) {
+    .cp-auth-wrap {
+        align-items: flex-start;
+        min-height: auto;
+        padding: 28px 12px 48px;
+    }
+
+    .cp-auth-card {
+        padding: 24px 16px;
+        border-radius: 18px;
+    }
+
+    .cp-role-tabs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.cp-register-wrap {
+    min-height: calc(100vh - 180px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 44px 20px 64px;
+}
+
+.cp-register-card {
+    width: min(980px, 100%);
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    overflow: hidden;
+    border: 1px solid #d8dee4;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 20px 60px rgba(31, 35, 40, 0.12);
+}
+
+.cp-register-intro {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: 34px 28px;
+    background: #24292f;
+    color: #f0f3f6;
+}
+
+.cp-register-kicker {
+    color: #58a6ff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.cp-register-intro h1 {
+    margin: 14px 0 12px;
+    font-family: var(--font-body);
+    font-size: clamp(28px, 4vw, 38px);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+}
+
+.cp-register-intro p {
+    margin: 0;
+    color: #afb8c1;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.cp-register-steps {
+    display: grid;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 28px;
+}
+
+.cp-register-steps span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #c9d1d9;
+    font-size: 13px;
+}
+
+.cp-register-steps strong {
+    width: 28px;
+    height: 28px;
+    display: inline-grid;
+    place-items: center;
+    border: 1px solid #57606a;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 12px;
+}
+
+.cp-register-form {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.cp-register-form-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.cp-register-form-heading span:first-child {
+    display: block;
+    margin-bottom: 4px;
+    color: #0969da;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.cp-register-form-heading h2 {
+    margin: 0;
+    color: #1f2328;
+    font-family: var(--font-body);
+    font-size: 24px;
+    letter-spacing: -0.03em;
+}
+
+.cp-register-required {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.cp-register-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 16px;
+}
+
+.cp-register-grid label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    color: #1f2328;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.cp-register-grid .cp-auth-input {
+    width: 100%;
+    min-height: 44px;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    background: #fff;
+    color: #1f2328;
+    margin: 0;
+}
+
+.cp-register-grid .cp-auth-input:focus {
+    border-color: #0969da;
+    box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.12);
+}
+
+.cp-register-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.cp-register-actions .cp-auth-submit {
+    min-width: 210px;
+    margin: 0;
+    border-radius: 6px;
+    background: #0969da;
+}
+
+.cp-register-actions .cp-auth-submit:hover:not(:disabled) {
+    background: #0550ae;
+}
+
+.cp-register-actions p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.cp-register-actions p a {
+    color: #0969da;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+@media (max-width: 800px) {
+    .cp-register-card {
+        grid-template-columns: 1fr;
+    }
+
+    .cp-register-intro {
+        min-height: auto;
+        padding: 24px;
+    }
+
+    .cp-register-steps {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 18px;
+        padding-top: 12px;
+    }
+
+    .cp-register-steps span {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 560px) {
+    .cp-register-wrap {
+        align-items: flex-start;
+        padding: 24px 12px 48px;
+    }
+
+    .cp-register-card {
+        border-radius: 8px;
+    }
+
+    .cp-register-intro {
+        padding: 22px 18px;
+    }
+
+    .cp-register-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .cp-register-form {
+        padding: 22px 16px;
+    }
+
+    .cp-register-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cp-register-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .cp-register-actions .cp-auth-submit {
+        width: 100%;
+        min-width: 0;
+    }
 }

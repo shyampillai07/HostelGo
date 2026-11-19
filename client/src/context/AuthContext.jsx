@@ -22,8 +22,10 @@ export function AuthProvider({ children }) {
       .finally(() => setLoading(false));
   }, []);
 
-  async function login(identifier, password) {
-    const res = await api.post('/auth/login', { identifier, password });
+  async function login(identifier, password, role) {
+    localStorage.removeItem('cp360_token');
+    setUser(null);
+    const res = await api.post('/auth/login', { identifier, password, role });
     localStorage.setItem('cp360_token', res.data.token);
     setUser(res.data.user);
     return res.data.user;

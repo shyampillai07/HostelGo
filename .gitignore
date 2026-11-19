@@ -41,8 +41,10 @@ test-output/
 client/dist/
 dist/
 
-#Scripts
-server/scripts/
+# Local token helper
+server/scripts/getTokens.js
+
+# Keep operational seed scripts available in the repository
 
 # Editor
 .vscode/
