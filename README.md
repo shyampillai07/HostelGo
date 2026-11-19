@@ -408,7 +408,7 @@ HostelGo/
 │       ├── api/                         # Axios instance and API configuration
 │       ├── components/                  # Reusable UI components
 │       ├── context/                     # Authentication state
-│       └── pages/                       # Application pages and routes
+│       └── pages/                       # Student, warden, scanner, and admin pages
 │
 ├── server/                              # Express 5 backend
 │   ├── config/                          # Database configuration
@@ -418,6 +418,7 @@ HostelGo/
 │   ├── routes/                          # REST API routes
 │   ├── utils/                           # Validators and utilities
 │   ├── scripts/                         # Setup and seed scripts
+│   │   ├── seedDemoData.js              # Complete demo dataset
 │   │   ├── seedStaff.js
 │   │   ├── seedRooms.js
 │   │   └── getTokens.js
@@ -574,6 +575,30 @@ cd server
 node scripts/seedRooms.js
 ```
 
+## Demo Data
+
+For local demonstrations, the complete dataset can be created with:
+
+```bash
+cd server
+npm run seed:demo
+```
+
+This idempotent seed creates demo administrator, warden, gate-staff, and student
+accounts for the `2026-2027` academic year, along with payment records, hostel
+rooms, active passes, and maintenance tickets. It is intended for development
+and demonstration environments only.
+
+All demo accounts use the password `HostelGo@123`:
+
+| Role | Login ID |
+|------|----------|
+| Student | `DEMO001` |
+| Admin | `DEMO-ADMIN` |
+| Warden | `DEMO-WARDEN` |
+| Gate Staff | `DEMO-GATE` |
+
+Never run this seed against a production database.
 
 
 ## API
@@ -590,7 +615,20 @@ Production:
 https://HostelGo.onrender.com/api/health
 ```
 
-Other application routes are organized under the backend `routes/` and `controllers/` directories.
+### Route Groups
+
+| Prefix | Purpose |
+|--------|---------|
+| `/api/auth` | Student and staff authentication |
+| `/api/ledger` | Payment submission and verification |
+| `/api/rooms` | Hostel blocks, rooms, and bed allocation |
+| `/api/status` | Student and occupancy status |
+| `/api/pass` | Digital pass generation and validation |
+| `/api/scanner` | Gate access verification |
+| `/api/maintenance` | Maintenance ticket workflows |
+| `/api/admin` | Staff management |
+
+All protected routes require JWT authentication and enforce role-based access.
 
 
 
@@ -626,7 +664,7 @@ ODM: Mongoose
 - Render's free tier uses ephemeral storage, so uploaded payment receipt PDFs may not persist after a cold restart.
 - Production file uploads should use dedicated object storage rather than local server storage.
 - An automated test suite has not yet been implemented.
-- Current application flows have been verified manually.
+- Current application flows and responsive mobile layouts have been verified manually.
 - Payment resubmission after rejection is not currently supported for the same academic year.
 - Bed release and transfer functionality is not yet implemented.
 - Comprehensive audit logging is not yet implemented.
